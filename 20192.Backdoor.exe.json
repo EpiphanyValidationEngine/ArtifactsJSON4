@@ -1,1 +1,73 @@
-{"data": {"CAPE Sandbox": {"tactics": [{"id": "TA0011", "name": "Command and Control", "link": "https://attack.mitre.org/tactics/TA0011/", "description": "The adversary is trying to communicate with compromised systems to control them.\n\nCommand and Control consists of techniques that adversaries may use to communicate with systems under their control within a victim network. Adversaries commonly attempt to mimic normal, expected traffic to avoid detection. There are many ways an adversary can establish command and control with various levels of stealth depending on the victim\u2019s network structure and defenses.", "techniques": [{"id": "T1071", "name": "Application Layer Protocol", "link": "https://attack.mitre.org/techniques/T1071/", "description": "Adversaries may communicate using OSI application layer protocols to avoid detection/network filtering by blending in with existing traffic. Commands to the remote system, and often the results of those commands, will be embedded within the protocol traffic between the client and server. \nAdversaries may utilize many different protocols, including those used for web browsing, transferring files, electronic mail, DNS, or publishing/subscribing. For connections that occur internally within an enclave (such as those between a proxy or pivot node and other nodes), commonly used protocols are SMB, SSH, or RDP. ", "signatures": [{"severity": "UNKNOWN", "description": "Adversaries may communicate using application layer protocols to avoid detection/network filtering by blending in with existing traffic."}]}]}, {"id": "TA0005", "name": "Defense Evasion", "link": "https://attack.mitre.org/tactics/TA0005/", "description": "The adversary is trying to avoid being detected.\n\nDefense Evasion consists of techniques that adversaries use to avoid detection throughout their compromise. Techniques used for defense evasion include uninstalling/disabling security software or obfuscating/encrypting data and scripts. Adversaries also leverage and abuse trusted processes to hide and masquerade their malware. Other tactics\u2019 techniques are cross-listed here when those techniques include the added benefit of subverting defenses. ", "techniques": [{"id": "T1070", "name": "Indicator Removal", "link": "https://attack.mitre.org/techniques/T1070/", "description": "Adversaries may delete or modify artifacts generated within systems to remove evidence of their presence or hinder defenses. Various artifacts may be created by an adversary or something that can be attributed to an adversary\u2019s actions. Typically these artifacts are used as defensive indicators related to monitored events, such as strings from downloaded files, logs that are generated from user actions, and other data analyzed by defenders. Location, format, and type of artifact (such as command or login history) are often specific to each platform.\nRemoval of these indicators may interfere with event collection, reporting, or other processes used to detect intrusion activity. This may compromise the integrity of security solutions by causing notable events to go unreported. This activity may also impede forensic analysis and incident response, due to lack of sufficient data to determine what occurred.", "signatures": [{"severity": "UNKNOWN", "description": "Adversaries may delete or modify artifacts generated within systems to remove evidence of their presence or hinder defenses."}]}, {"id": "T1070.006", "name": "Timestomp", "link": "https://attack.mitre.org/techniques/T1070/006/", "description": "Adversaries may modify file time attributes to hide new files or changes to existing files. Timestomping is a technique that modifies the timestamps of a file (the modify, access, create, and change times), often to mimic files that are in the same folder and blend malicious files with legitimate files.\nBoth the $STANDARD_INFORMATION ($SI) and $FILE_NAME ($FN) attributes record times in a Master File Table (MFT) file. $SI (dates/time stamps) is displayed to the end user, including in the File System view, while $FN is dealt with by the kernel.\nModifying the $SI attribute is the most common method of timestomping because it can be modified at the user level using API calls. $FN timestomping, however, typically requires interacting with the system kernel or moving or renaming a file.\nAdversaries modify timestamps on files so that they do not appear conspicuous to forensic investigators or file analysis tools. In order to evade detections that rely on identifying discrepancies between the $SI and $FN attributes, adversaries may also engage in \u201cdouble timestomping\u201d by modifying times on both attributes simultaneously.\nTimestomping may be used along with file name Masquerading to hide malware and tools.", "signatures": [{"severity": "UNKNOWN", "description": "Adversaries may modify file time attributes to hide new or changes to existing files."}]}]}]}, "Zenbox": {"tactics": [{"id": "TA0005", "name": "Defense Evasion", "link": "https://attack.mitre.org/tactics/TA0005/", "description": "The adversary is trying to avoid being detected.\n\nDefense Evasion consists of techniques that adversaries use to avoid detection throughout their compromise. Techniques used for defense evasion include uninstalling/disabling security software or obfuscating/encrypting data and scripts. Adversaries also leverage and abuse trusted processes to hide and masquerade their malware. Other tactics\u2019 techniques are cross-listed here when those techniques include the added benefit of subverting defenses. ", "techniques": [{"id": "T1070", "name": "Indicator Removal", "link": "https://attack.mitre.org/techniques/T1070/", "description": "Adversaries may delete or modify artifacts generated within systems to remove evidence of their presence or hinder defenses. Various artifacts may be created by an adversary or something that can be attributed to an adversary\u2019s actions. Typically these artifacts are used as defensive indicators related to monitored events, such as strings from downloaded files, logs that are generated from user actions, and other data analyzed by defenders. Location, format, and type of artifact (such as command or login history) are often specific to each platform.\nRemoval of these indicators may interfere with event collection, reporting, or other processes used to detect intrusion activity. This may compromise the integrity of security solutions by causing notable events to go unreported. This activity may also impede forensic analysis and incident response, due to lack of sufficient data to determine what occurred."}, {"id": "T1070.006", "name": "Timestomp", "link": "https://attack.mitre.org/techniques/T1070/006/", "description": "Adversaries may modify file time attributes to hide new files or changes to existing files. Timestomping is a technique that modifies the timestamps of a file (the modify, access, create, and change times), often to mimic files that are in the same folder and blend malicious files with legitimate files.\nBoth the $STANDARD_INFORMATION ($SI) and $FILE_NAME ($FN) attributes record times in a Master File Table (MFT) file. $SI (dates/time stamps) is displayed to the end user, including in the File System view, while $FN is dealt with by the kernel.\nModifying the $SI attribute is the most common method of timestomping because it can be modified at the user level using API calls. $FN timestomping, however, typically requires interacting with the system kernel or moving or renaming a file.\nAdversaries modify timestamps on files so that they do not appear conspicuous to forensic investigators or file analysis tools. In order to evade detections that rely on identifying discrepancies between the $SI and $FN attributes, adversaries may also engage in \u201cdouble timestomping\u201d by modifying times on both attributes simultaneously.\nTimestomping may be used along with file name Masquerading to hide malware and tools.", "signatures": [{"severity": "INFO", "description": "Binary contains a suspicious time stamp"}]}]}]}}, "links": {"self": "https://www.virustotal.com/api/v3/files/20192ff849c70d4f154c2db49f5c54f5d25e181a945ad8c695f836de7533dc16/behaviour_mitre_trees"}}
+{
+        "name": "20192.Backdoor.exe",
+        "versions": {
+                "attack": "16",
+                "navigator": "5.1.0",
+                "layer": "4.5"
+        },
+        "domain": "enterprise-attack",
+        "description": "",
+        "filters": {
+                "platforms": [
+                        "Linux",
+                        "macOS",
+                        "Windows",
+                        "Office 365",
+                        "Azure AD",
+                        "AWS",
+                        "GCP",
+                        "Azure",
+                        "SaaS",
+                        "PRE",
+                        "Network"
+                ]
+        },
+        "sorting": 0,
+        "layout": {
+                "layout": "flat",
+                "showID": false,
+                "showName": true
+        },
+        "hideDisabled": false,
+        "techniques": [
+                {
+                        "techniqueID": "T1071",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "T1070",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "T1070.006",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                }
+        ],
+        "gradient": {
+                "colors": [
+                        "#ff6666",
+                        "#ffe766",
+                        "#8ec843"
+                ],
+                "minValue": 0,
+                "maxValue": 100
+        },
+        "legendItems": [],
+        "metadata": [],
+        "showTacticRowBackground": false,
+        "tacticRowBackground": "#dddddd",
+        "selectTechniquesAcrossTactics": true,
+        "selectSubtechniquesWithParent": false
+}
