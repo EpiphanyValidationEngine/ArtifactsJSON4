@@ -1,1 +1,65 @@
-{"data": {"CAPA": {"tactics": [{"id": "TA0005", "name": "Defense Evasion", "link": "https://attack.mitre.org/tactics/TA0005/", "description": "The adversary is trying to avoid being detected.\n\nDefense Evasion consists of techniques that adversaries use to avoid detection throughout their compromise. Techniques used for defense evasion include uninstalling/disabling security software or obfuscating/encrypting data and scripts. Adversaries also leverage and abuse trusted processes to hide and masquerade their malware. Other tactics\u2019 techniques are cross-listed here when those techniques include the added benefit of subverting defenses. ", "techniques": [{"id": "T1620", "name": "Reflective Code Loading", "link": "https://attack.mitre.org/techniques/T1620/", "description": "Adversaries may reflectively load code into a process in order to conceal the execution of malicious payloads. Reflective loading involves allocating then executing payloads directly within the memory of the process, vice creating a thread or process backed by a file path on disk (e.g., Shared Modules).\nReflectively loaded payloads may be compiled binaries, anonymous files (only present in RAM), or just snubs of fileless executable code (ex: position-independent shellcode). For example, the Assembly.Load() method executed by PowerShell may be abused to load raw code into the running process.\nReflective code injection is very similar to Process Injection except that the \u201cinjection\u201d loads code into the processes\u2019 own memory instead of that of a separate process. Reflective loading may evade process-based detections since the execution of the arbitrary code may be masked within a legitimate or otherwise benign process. Reflectively loading payloads directly into memory may also avoid creating files or other artifacts on disk, while also enabling malware to keep these payloads encrypted (or otherwise obfuscated) until execution.", "signatures": [{"severity": "INFO", "description": "load .NET assembly"}, {"severity": "INFO", "description": "invoke .NET assembly method"}]}, {"id": "T1140", "name": "Deobfuscate/Decode Files or Information", "link": "https://attack.mitre.org/techniques/T1140/", "description": "Adversaries may use Obfuscated Files or Information to hide artifacts of an intrusion from analysis. They may require separate mechanisms to decode or deobfuscate that information depending on how they intend to use it. Methods for doing that include built-in functionality of malware or by using utilities present on the system.\nOne such example is the use of certutil to decode a remote access tool portable executable file that has been hidden inside a certificate file. Another example is using the Windows copy /b command to reassemble binary fragments into a malicious payload.\nSometimes a user's action may be required to open it for deobfuscation or decryption as part of User Execution. The user may also be required to input a password to open a password protected compressed/encrypted file that was provided by the adversary. ", "signatures": [{"severity": "INFO", "description": "decode data using Base64 in .NET"}]}]}]}}, "links": {"self": "https://www.virustotal.com/api/v3/files/a862d0496b231553fdb9e46917c6d7af7f805d3159d2b1b248250fa1c540f009/behaviour_mitre_trees"}}
+{
+        "name": "a862d.Stealer.exe",
+        "versions": {
+                "attack": "16",
+                "navigator": "5.1.0",
+                "layer": "4.5"
+        },
+        "domain": "enterprise-attack",
+        "description": "",
+        "filters": {
+                "platforms": [
+                        "Linux",
+                        "macOS",
+                        "Windows",
+                        "Office 365",
+                        "Azure AD",
+                        "AWS",
+                        "GCP",
+                        "Azure",
+                        "SaaS",
+                        "PRE",
+                        "Network"
+                ]
+        },
+        "sorting": 0,
+        "layout": {
+                "layout": "flat",
+                "showID": false,
+                "showName": true
+        },
+        "hideDisabled": false,
+        "techniques": [
+                {
+                        "techniqueID": "T1140",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                },
+                {
+                        "techniqueID": "T1620",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                }
+        ],
+        "gradient": {
+                "colors": [
+                        "#ff6666",
+                        "#ffe766",
+                        "#8ec843"
+                ],
+                "minValue": 0,
+                "maxValue": 100
+        },
+        "legendItems": [],
+        "metadata": [],
+        "showTacticRowBackground": false,
+        "tacticRowBackground": "#dddddd",
+        "selectTechniquesAcrossTactics": true,
+        "selectSubtechniquesWithParent": false
+}
