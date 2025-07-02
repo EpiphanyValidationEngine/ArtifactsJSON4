@@ -1,1 +1,57 @@
-{"data": {}, "links": {"self": "https://www.virustotal.com/api/v3/files/a4d8fdb0a048dcdd333a14df45c0a56412d6bca0a4cce75da62d21186e393db8/behaviour_mitre_trees"}}
+{
+        "name": "a4d8f.Siggen.exe",
+        "versions": {
+                "attack": "16",
+                "navigator": "5.1.0",
+                "layer": "4.5"
+        },
+        "domain": "enterprise-attack",
+        "description": "",
+        "filters": {
+                "platforms": [
+                        "Linux",
+                        "macOS",
+                        "Windows",
+                        "Office 365",
+                        "Azure AD",
+                        "AWS",
+                        "GCP",
+                        "Azure",
+                        "SaaS",
+                        "PRE",
+                        "Network"
+                ]
+        },
+        "sorting": 0,
+        "layout": {
+                "layout": "flat",
+                "showID": false,
+                "showName": true
+        },
+        "hideDisabled": false,
+        "techniques": [
+                {
+                        "techniqueID": "",
+                        "color": "#e60d0d",
+                        "comment": "",
+                        "enabled": true,
+                        "metadata": [],
+                        "showSubtechniques": true
+                }
+        ],
+        "gradient": {
+                "colors": [
+                        "#ff6666",
+                        "#ffe766",
+                        "#8ec843"
+                ],
+                "minValue": 0,
+                "maxValue": 100
+        },
+        "legendItems": [],
+        "metadata": [],
+        "showTacticRowBackground": false,
+        "tacticRowBackground": "#dddddd",
+        "selectTechniquesAcrossTactics": true,
+        "selectSubtechniquesWithParent": false
+}
